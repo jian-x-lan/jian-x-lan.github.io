@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="参考网址">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查漏补缺-css">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/查漏补缺-css/index.html">
+<meta property="og:site_name" content="简小岚">
+<meta property="og:description" content="参考网址">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-09T07:22:06.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="查漏补缺-css">
+<meta name="twitter:description" content="参考网址">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/09/查漏补缺-css/">
+
+
+
+
+
+  <title>查漏补缺-css | 简小岚</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">简小岚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/09/查漏补缺-css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简小岚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简小岚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">查漏补缺-css</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-09T09:16:37+08:00">
+                2020-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/haizlin/fe-interview/blob/master/category/history.md" target="_blank" rel="noopener">参考网址</a></p>
+<a id="more"></a>
+
+<h3 id="CSS-选择器有哪些？哪些属性可以继承？-2019-04-20"><a href="#CSS-选择器有哪些？哪些属性可以继承？-2019-04-20" class="headerlink" title="CSS 选择器有哪些？哪些属性可以继承？[2019.04.20]"></a>CSS 选择器有哪些？哪些属性可以继承？[2019.04.20]</h3><h3 id="隐藏元素-2019-04-19"><a href="#隐藏元素-2019-04-19" class="headerlink" title="隐藏元素[2019.04.19]"></a>隐藏元素[2019.04.19]</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 自己 */</span></span><br><span class="line"><span class="selector-class">.hidden1</span> &#123;</span><br><span class="line">  <span class="comment">/* 不占位 */</span></span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden2</span> &#123;</span><br><span class="line">  <span class="comment">/* 占位 */</span></span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden3</span> &#123;</span><br><span class="line">  <span class="comment">/* 占位 */</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 网友 */</span></span><br><span class="line"><span class="selector-class">.hidden4</span> &#123;</span><br><span class="line">  <span class="comment">/* 针对性 行内元素无效 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden5</span> &#123;</span><br><span class="line">  <span class="comment">/* 针对性 行内元素无效 */</span></span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(0);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden6</span> &#123;</span><br><span class="line">  <span class="comment">/* 针对性 */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden7</span> &#123;</span><br><span class="line">  <span class="comment">/* 设置定位让元素大幅度偏离文档流,额，并不是很好的一个方案 */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">10000px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS3-有哪些新增的特性？-2019-04-18"><a href="#CSS3-有哪些新增的特性？-2019-04-18" class="headerlink" title="CSS3 有哪些新增的特性？[2019.04.18]"></a>CSS3 有哪些新增的特性？[2019.04.18]</h3><h3 id="两侧宽度固定，中间宽度自适应的三栏布局-2019-04-17"><a href="#两侧宽度固定，中间宽度自适应的三栏布局-2019-04-17" class="headerlink" title="两侧宽度固定，中间宽度自适应的三栏布局[2019.04.17]"></a>两侧宽度固定，中间宽度自适应的三栏布局[2019.04.17]</h3><h4 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  body &#123;</span><br><span class="line">    min-width: 600px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    padding: 0 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">    content: '';</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> <span class="selector-tag">div</span> &#123;</span></span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.center</span> &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#e1e1e1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.left</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    background: goldenrod;</span><br><span class="line">    margin-left: -100%;</span><br><span class="line"><span class="css">    <span class="comment">/* 使用position: relative和right: 200px将元素的位置在原有位置基础上左移200px */</span></span></span><br><span class="line">    position: relative;</span><br><span class="line">    right: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.right</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    background: rosybrown;</span><br><span class="line">    margin-right: -200px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  body &#123;</span><br><span class="line">    min-width: 600px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.column</span> &#123;</span></span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.center</span> &#123;</span></span><br><span class="line">    margin-left: 200px;</span><br><span class="line">    margin-right: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.left</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    margin-left: -100%;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#e1e1e1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.right</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    margin-left: -200px;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#e1e1e1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box column"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left column"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right column"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100px;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> <span class="selector-class">.left</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#e1e1e1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> <span class="selector-class">.right</span> &#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#e1e1e1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> <span class="selector-class">.center</span> &#123;</span></span><br><span class="line">    width: auto;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">    margin: 0 200px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-布局"><a href="#flex-布局" class="headerlink" title="flex 布局"></a>flex 布局</h4><p><code>flex</code>:flex-grow flex-shrink flex-basis;默认为 <code>0 1 auto</code><br>两个快捷值:<code>auto</code> (1 1 auto) 和 <code>none</code> (0 0 auto)。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">    display: flex;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.center</span> &#123;</span></span><br><span class="line">    flex: 1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.left</span> &#123;</span></span><br><span class="line">    flex: 0 0 200px;</span><br><span class="line">    order: -1;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#f1f1f1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.right</span> &#123;</span></span><br><span class="line">    flex: 0 0 200px;</span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#f1f1f1</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>center<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/07/js/js平铺数据转树结构/" rel="next" title="js 平铺数据转层级树结构">
+                <i class="fa fa-chevron-left"></i> js 平铺数据转层级树结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/09/查漏补缺-html/" rel="prev" title="查漏补缺-html">
+                查漏补缺-html <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="简小岚">
+            
+              <p class="site-author-name" itemprop="name">简小岚</p>
+              <p class="site-description motion-element" itemprop="description">每个人心里都有十厘米的天空，一厘米的乌云一厘米的黑夜，剩下的是八厘米蔚蓝的天空。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-选择器有哪些？哪些属性可以继承？-2019-04-20"><span class="nav-number">1.</span> <span class="nav-text">CSS 选择器有哪些？哪些属性可以继承？[2019.04.20]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏元素-2019-04-19"><span class="nav-number">2.</span> <span class="nav-text">隐藏元素[2019.04.19]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-有哪些新增的特性？-2019-04-18"><span class="nav-number">3.</span> <span class="nav-text">CSS3 有哪些新增的特性？[2019.04.18]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两侧宽度固定，中间宽度自适应的三栏布局-2019-04-17"><span class="nav-number">4.</span> <span class="nav-text">两侧宽度固定，中间宽度自适应的三栏布局[2019.04.17]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#圣杯布局"><span class="nav-number">4.1.</span> <span class="nav-text">圣杯布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双飞翼布局"><span class="nav-number">4.2.</span> <span class="nav-text">双飞翼布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.3.</span> <span class="nav-text">绝对定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-布局"><span class="nav-number">4.4.</span> <span class="nav-text">flex 布局</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简小岚</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":450,"hOffset":0,"vOffset":-50},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

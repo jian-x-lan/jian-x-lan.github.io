@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="兼容,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="htmlcsstext-overflow 失效123456/* 在元素上添加word-wrap: normal */.text-ellipsis &amp;#123;  ...;  word-wrap: normal;  ....;&amp;#125;  jsshowModalDialogshowModalDialog、兼容问题解决方案唔，虽然网上说不建议使用，但无奈老系统使用的这个方案。 addEventLis">
+<meta name="keywords" content="兼容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="兼容问题整理">
+<meta property="og:url" content="http://yoursite.com/2019/08/22/兼容问题整理/index.html">
+<meta property="og:site_name" content="简小岚">
+<meta property="og:description" content="htmlcsstext-overflow 失效123456/* 在元素上添加word-wrap: normal */.text-ellipsis &amp;#123;  ...;  word-wrap: normal;  ....;&amp;#125;  jsshowModalDialogshowModalDialog、兼容问题解决方案唔，虽然网上说不建议使用，但无奈老系统使用的这个方案。 addEventLis">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-05T03:22:12.829Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="兼容问题整理">
+<meta name="twitter:description" content="htmlcsstext-overflow 失效123456/* 在元素上添加word-wrap: normal */.text-ellipsis &amp;#123;  ...;  word-wrap: normal;  ....;&amp;#125;  jsshowModalDialogshowModalDialog、兼容问题解决方案唔，虽然网上说不建议使用，但无奈老系统使用的这个方案。 addEventLis">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/22/兼容问题整理/">
+
+
+
+
+
+  <title>兼容问题整理 | 简小岚</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">简小岚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/兼容问题整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简小岚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简小岚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">兼容问题整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T09:16:37+08:00">
+                2019-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="text-overflow-失效"><a href="#text-overflow-失效" class="headerlink" title="text-overflow 失效"></a>text-overflow 失效</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在元素上添加word-wrap: normal */</span></span><br><span class="line"><span class="selector-class">.text-ellipsis</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  <span class="selector-tag">word-wrap</span>: <span class="selector-tag">normal</span>;</span><br><span class="line">  ....;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><h3 id="showModalDialog"><a href="#showModalDialog" class="headerlink" title="showModalDialog"></a>showModalDialog</h3><p><a href="https://www.w3cschool.cn/fetch_api/fetch_api-9puc2z25.html" target="_blank" rel="noopener">showModalDialog</a>、<a href="https://www.cnblogs.com/fengjiqiang/p/5190377.html" target="_blank" rel="noopener">兼容问题解决方案</a><br>唔，虽然网上说不建议使用，但无奈老系统使用的这个方案。</p>
+<h3 id="addEventListener-事件监听"><a href="#addEventListener-事件监听" class="headerlink" title="addEventListener 事件监听"></a>addEventListener 事件监听</h3><ul>
+<li><p><a href="https://www.cnblogs.com/cnblogs-jcy/p/6038965.html" target="_blank" rel="noopener">参考网址</a></p>
+</li>
+<li><p><code>addEventListener</code>适用于现代浏览器（IE9、10、11 | ff, chorme, safari, opera</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//event: 必须。字符串，指定事件名。(注： 不要是 on+'someEvent', just 'someEvent' is ok).</span></span><br><span class="line"><span class="comment">//function: 必须。指定要事件触发时执行的函数。(注：function(e) e:事件对象会作为第一个参数传入函数, 事件对象的类型取决于特定的事件,例如， "click" 事件属于 MouseEvent(鼠标事件) 对象。)</span></span><br><span class="line"><span class="comment">//useCapture: 可选。布尔值，指定事件是否在捕获或冒泡阶段执行。(注：true:function(e) 在捕获阶段执行， false:function(e)在冒泡阶段执行，（默认为 false ).　</span></span><br><span class="line">element.addEventListener(event,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>),<span class="title">useCapture</span>)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>attachEvent</code>适用于 IE 6、7、8</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eType: 必须。字符串，事件名称，含“on”，比如“onclick”、“onmouseover”、“onkeydown”等。</span></span><br><span class="line"><span class="comment">//function：必须。定要事件触发时执行的函数。</span></span><br><span class="line">element.attachEvent(eType,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>))</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解决方案</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">element, type, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">    element.addEventListener(type, callback, <span class="literal">false</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">    element.attachEvent(<span class="string">'on'</span> + type, callback)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    element[<span class="string">'on'</span> + type] = callback</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/兼容/" rel="tag"># 兼容</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/22/css/css实现等间距分布/" rel="next" title="css实现等间距分布">
+                <i class="fa fa-chevron-left"></i> css实现等间距分布
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/28/css/常见总结/" rel="prev" title="css常见小结">
+                css常见小结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="简小岚">
+            
+              <p class="site-author-name" itemprop="name">简小岚</p>
+              <p class="site-description motion-element" itemprop="description">每个人心里都有十厘米的天空，一厘米的乌云一厘米的黑夜，剩下的是八厘米蔚蓝的天空。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html"><span class="nav-number">1.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#text-overflow-失效"><span class="nav-number">2.1.</span> <span class="nav-text">text-overflow 失效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js"><span class="nav-number">3.</span> <span class="nav-text">js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#showModalDialog"><span class="nav-number">3.1.</span> <span class="nav-text">showModalDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addEventListener-事件监听"><span class="nav-number">3.2.</span> <span class="nav-text">addEventListener 事件监听</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简小岚</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":450,"hOffset":0,"vOffset":-50},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

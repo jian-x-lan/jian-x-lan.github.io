@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="个人,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="平时工作学习会随手记很多东西，也在一些线上平台整理发布过，但零零散散的实在不成系统，就想着搞个人博客。去年 8 月份开始，两个多月吧，博客前台展示，管理系统，服务端。摸摸索索的搞了一个，但是实在审美有限，总觉得不好看。加上后期服务器到期并且没有闲钱续租，所以就半途而废了 🤷‍♀。最近又开始闲了，有想着优化一下，但是设计是过不去的一道坎。然后就那天看羡辙小姐姐的个人主页，奇怪项目名称是 xxx.g">
+<meta name="keywords" content="个人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github+hexo搭建博客">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/github+hexo搭建博客/index.html">
+<meta property="og:site_name" content="简小岚">
+<meta property="og:description" content="平时工作学习会随手记很多东西，也在一些线上平台整理发布过，但零零散散的实在不成系统，就想着搞个人博客。去年 8 月份开始，两个多月吧，博客前台展示，管理系统，服务端。摸摸索索的搞了一个，但是实在审美有限，总觉得不好看。加上后期服务器到期并且没有闲钱续租，所以就半途而废了 🤷‍♀。最近又开始闲了，有想着优化一下，但是设计是过不去的一道坎。然后就那天看羡辙小姐姐的个人主页，奇怪项目名称是 xxx.g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-05T03:22:12.822Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="github+hexo搭建博客">
+<meta name="twitter:description" content="平时工作学习会随手记很多东西，也在一些线上平台整理发布过，但零零散散的实在不成系统，就想着搞个人博客。去年 8 月份开始，两个多月吧，博客前台展示，管理系统，服务端。摸摸索索的搞了一个，但是实在审美有限，总觉得不好看。加上后期服务器到期并且没有闲钱续租，所以就半途而废了 🤷‍♀。最近又开始闲了，有想着优化一下，但是设计是过不去的一道坎。然后就那天看羡辙小姐姐的个人主页，奇怪项目名称是 xxx.g">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/github+hexo搭建博客/">
+
+
+
+
+
+  <title>github+hexo搭建博客 | 简小岚</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">简小岚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/github+hexo搭建博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简小岚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简小岚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">github+hexo搭建博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T15:58:00+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>平时工作学习会随手记很多东西，也在一些线上平台整理发布过，但零零散散的实在不成系统，就想着搞个人博客。去年 8 月份开始，两个多月吧，博客前台展示，管理系统，服务端。摸摸索索的搞了一个，但是实在审美有限，总觉得不好看。加上后期服务器到期并且没有闲钱续租，所以就半途而废了 🤷‍♀。<br>最近又开始闲了，有想着优化一下，但是设计是过不去的一道坎。然后就那天看<a href="http://zhangwenli.com/" target="_blank" rel="noopener">羡辙小姐姐的个人主页</a>，奇怪项目名称是 <code>xxx.github.io</code>。就去稍稍搜索研究了一下。然后就说干就干了哈。</p>
+<a id="more"></a>
+
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>注册<a href="https://github.com" target="_blank" rel="noopener">github</a>账号</li>
+<li>新建一个项目，右上角<code>+</code>号下拉选择<code>New repository</code></li>
+<li>项目名称规范：<code>username.github.io</code> （username 指注册时的用户名哦）</li>
+<li>进入项目链接后右上角有<code>setting</code>,页面下滑找到<code>GitHub Pages</code>这个部分；如果出现<code>Your site is published at https://xxx.github.io/</code>就代表创建成功啦。下面有一个<code>choose theme</code>按钮,就可以去选择自己喜欢的主题啦。</li>
+<li>选择主题后会默认生成一个主题的<code>readme.md</code>文件。也就是博客默认进入的页面。当然，如果你在根目录新建一个 index.html，那默认页面就变成 index.html 啦。剩下的就和平常做项目一样啦。写完代码 push 到 github 上就可以看到啦。</li>
+</ul>
+<h4 id="引入-hexo"><a href="#引入-hexo" class="headerlink" title="引入 hexo"></a>引入 hexo</h4><ul>
+<li>实话说并不知道有这样现成的博客系统，是我搜索 github 建博客的时候那个博主介绍的。既然有便捷的工具那就尝试一下啦。需要 nodejs 和 git 的环境，这是基础，就不赘述了。</li>
+<li>💟<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo 官方文档</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexoPro</span><br><span class="line">cd hexoPro</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">//输入完之后就可以本地预览效果了 http://localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h4 id="hexo-部署到-github"><a href="#hexo-部署到-github" class="headerlink" title="hexo 部署到 github"></a>hexo 部署到 github</h4><ul>
+<li>打开根目录下的<code>_config.yml</code>文件，在最底部加上以下代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//repository的name填自己的用户名哦</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/name/name.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>继续输入以下命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">cd ~/.ssh</span><br><span class="line">ls #此时会显示一些文件</span><br><span class="line">mkdir key_backup</span><br><span class="line">cp id_rsa* key_backup</span><br><span class="line">rm id_rsa* #以上三步为备份和移除原来的SSH key设置</span><br><span class="line">ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot; #生成新的key文件,邮箱地址填你的Github地址</span><br><span class="line">#Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好，当然也可以输入自己喜欢的名字&gt;</span><br><span class="line">#接下来会让你输入密码，然后会确认一遍，如果是Linux可能是隐形字</span><br><span class="line">#上面的操作都成功之后会出现一个图，画的很拙劣，是表示OK了</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置 ssh</li>
+</ul>
+<ol>
+<li>获取<code>ssh key</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/xxx/.ssh/</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>到 github 的<a href="https://github.com/settings/keys" target="_blank" rel="noopener">账号设置</a>页面里，找到<code>SSH and GPG keys</code>,点击右上角的<code>New SSH Key</code>,在 Key 的输入框输入刚刚得到的 key 呀，Title 任意填。</li>
+</ol>
+<h4 id="问题及解决方案"><a href="#问题及解决方案" class="headerlink" title="问题及解决方案"></a>问题及解决方案</h4><p><a href="https://blog.csdn.net/chwshuang/article/details/52350559" target="_blank" rel="noopener">参考链接</a></p>
+<h4 id="hexo-使用"><a href="#hexo-使用" class="headerlink" title="hexo 使用"></a>hexo 使用</h4><ul>
+<li>hexo 有许多的优秀的主题可供选择哦~<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo 主题选择</a></li>
+<li>我选择的易于上手，且既符合我个性的极简风格 😬<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题使用文档</a></li>
+</ul>
+<h6 id="文章会自动生成目录呢，棒棒哒-💯"><a href="#文章会自动生成目录呢，棒棒哒-💯" class="headerlink" title="文章会自动生成目录呢，棒棒哒 💯"></a>文章会自动生成目录呢，棒棒哒 💯</h6><h6 id="点击爱心效果"><a href="#点击爱心效果" class="headerlink" title="点击爱心效果"></a>点击爱心效果</h6><ol>
+<li>在/themes/next/source/js/src 下新建文件 clicklove.js</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!function (e, t, a) &#123; function n () &#123; c(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &apos;&apos;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;), o(), r() &#125; function r () &#123; for (var e = 0; e &lt; d.length; e++)d[e].alpha &lt;= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y-- , d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = &quot;left:&quot; + d[e].x + &quot;px;top:&quot; + d[e].y + &quot;px;opacity:&quot; + d[e].alpha + &quot;;transform:scale(&quot; + d[e].scale + &quot;,&quot; + d[e].scale + &quot;) rotate(45deg);background:&quot; + d[e].color + &quot;;z-index:99999&quot;); requestAnimationFrame(r) &#125; function o () &#123; var t = &quot;function&quot; == typeof e.onclick &amp;&amp; e.onclick; e.onclick = function (e) &#123; t &amp;&amp; t(), i(e) &#125; &#125; function i (e) &#123; var a = t.createElement(&quot;div&quot;); a.className = &quot;heart&quot;, d.push(&#123; el: a, x: e.clientX - 5, y: e.clientY - 5, scale: 1, alpha: 1, color: s() &#125;), t.body.appendChild(a) &#125; function c (e) &#123; var a = t.createElement(&quot;style&quot;); a.type = &quot;text/css&quot;; try &#123; a.appendChild(t.createTextNode(e)) &#125; catch (t) &#123; a.styleSheet.cssText = e &#125; t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a) &#125; function s () &#123; return &quot;rgb(&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;)&quot; &#125; var d = []; e.requestAnimationFrame = function () &#123; return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) &#123; setTimeout(e, 1e3 / 60) &#125; &#125;(), n() &#125;(window, document);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在\themes\next\layout_layout.swig 文件末尾添加：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/clicklove.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="添加-live2d-动画效果"><a href="#添加-live2d-动画效果" class="headerlink" title="添加 live2d 动画效果"></a>添加 live2d 动画效果</h6><ol>
+<li><code>npm install hexo-helper-live2d --save</code></li>
+<li><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">插件预览地址</a> 选择喜欢的形象下载 npm 包呀。我喜欢小白猫咪，所以 <code>npm install live2d-widget-model-tororo</code></li>
+<li>在<code>_config.yml</code> 中加入以下代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-tororo #白猫</span><br><span class="line">    # use: live2d-widget-model-hijiki #黑猫</span><br><span class="line"></span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 300</span><br><span class="line">    height: 450</span><br><span class="line">    hOffset: 0 # 调节水平位置</span><br><span class="line">    vOffset: -50 # 调节垂直位置</span><br><span class="line">  mobile:</span><br><span class="line">    show: false</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/个人/" rel="tag"># 个人</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/vue/Vue路由模式/" rel="next" title="vue路由模式问题">
+                <i class="fa fa-chevron-left"></i> vue路由模式问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/28/css/css对齐/" rel="prev" title="css对齐">
+                css对齐 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="简小岚">
+            
+              <p class="site-author-name" itemprop="name">简小岚</p>
+              <p class="site-description motion-element" itemprop="description">每个人心里都有十厘米的天空，一厘米的乌云一厘米的黑夜，剩下的是八厘米蔚蓝的天空。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入-hexo"><span class="nav-number">2.</span> <span class="nav-text">引入 hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-部署到-github"><span class="nav-number">3.</span> <span class="nav-text">hexo 部署到 github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题及解决方案"><span class="nav-number">4.</span> <span class="nav-text">问题及解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-使用"><span class="nav-number">5.</span> <span class="nav-text">hexo 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#文章会自动生成目录呢，棒棒哒-💯"><span class="nav-number">5.0.1.</span> <span class="nav-text">文章会自动生成目录呢，棒棒哒 💯</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#点击爱心效果"><span class="nav-number">5.0.2.</span> <span class="nav-text">点击爱心效果</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#添加-live2d-动画效果"><span class="nav-number">5.0.3.</span> <span class="nav-text">添加 live2d 动画效果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简小岚</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":450,"hOffset":0,"vOffset":-50},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

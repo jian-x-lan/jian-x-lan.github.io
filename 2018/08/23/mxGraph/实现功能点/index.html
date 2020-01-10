@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mxGraph,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="mxGraph 文档">
+<meta name="keywords" content="mxGraph">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现功能点">
+<meta property="og:url" content="http://yoursite.com/2018/08/23/mxGraph/实现功能点/index.html">
+<meta property="og:site_name" content="简小岚">
+<meta property="og:description" content="mxGraph 文档">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-05T03:22:12.826Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实现功能点">
+<meta name="twitter:description" content="mxGraph 文档">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/23/mxGraph/实现功能点/">
+
+
+
+
+
+  <title>实现功能点 | 简小岚</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">简小岚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/mxGraph/实现功能点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="简小岚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简小岚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">实现功能点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T05:00:00+08:00">
+                2018-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html" target="_blank" rel="noopener">mxGraph 文档</a></p>
+<a id="more"></a>
+
+<h4 id="设置全局背景图"><a href="#设置全局背景图" class="headerlink" title="设置全局背景图"></a>设置全局背景图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//官方api提供的设置背景图方式</span></span><br><span class="line"><span class="comment">//然而效果一般般，还没找到可以完美展现的方式。图片没有平铺，位置也不太对。。。</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> mxImage(<span class="string">'xx/xx'</span>, <span class="string">'2000'</span>, <span class="string">'1000'</span>)</span><br><span class="line">graph.setBackgroundImage(img)</span><br><span class="line">graph.view.validate()</span><br><span class="line"></span><br><span class="line"><span class="comment">//在例子中找到的方法，还算比较完美的。只是不知道会不会有坑。。。</span></span><br><span class="line">graph.container.style.backgroundImage = <span class="string">'url(xx/xx)'</span></span><br><span class="line">graph.getView().updateStyle = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自定义节点-cell-图像"><a href="#自定义节点-cell-图像" class="headerlink" title="自定义节点 cell 图像"></a>自定义节点 cell 图像</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> style = graph.getStylesheet().getDefaultVertexStyle()</span><br><span class="line">style[mxConstants.STYLE_PERIMETER] = mxPerimeter.RectanglePerimeter</span><br><span class="line">style[mxConstants.STYLE_IMAGE] = <span class="string">'images/xx.png'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自定义-html-的-label"><a href="#自定义-html-的-label" class="headerlink" title="自定义 html 的 label"></a>自定义 html 的 label</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Label 将显示 Html 格式的 Value</span></span><br><span class="line">graph.setHtmlLabels(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">//设置默认任务标签样式</span></span><br><span class="line">graph.convertValueToString = <span class="function"><span class="keyword">function</span>(<span class="params">cell</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (mxUtils.isNode(cell.value)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (cell.vertex) &#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        <span class="string">"&lt;p class='vertexLabel'&gt;"</span> +</span><br><span class="line">        decodeStr(cell.getAttribute(<span class="string">'activityName'</span>) || <span class="string">''</span>) +</span><br><span class="line">        <span class="string">'&lt;/p&gt;'</span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="就地编辑-待更新"><a href="#就地编辑-待更新" class="headerlink" title="就地编辑(待更新)"></a>就地编辑(待更新)</h4><h4 id="设置-Tooltip-提示"><a href="#设置-Tooltip-提示" class="headerlink" title="设置 Tooltip 提示"></a>设置 Tooltip 提示</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph.setTooltips(<span class="literal">true</span>)</span><br><span class="line">graph.getTooltipForCell = <span class="function"><span class="keyword">function</span>(<span class="params">cell</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> label = <span class="keyword">this</span>.convertValueToString(cell)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Tooltip for '</span> + label</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//全局设置，在原型方法上修改</span></span><br><span class="line">mxGraph.prototype.getTooltipForCell = <span class="function"><span class="keyword">function</span>(<span class="params">cell</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> label = <span class="keyword">this</span>.convertValueToString(cell)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Tooltip for '</span> + label</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="生成-xml"><a href="#生成-xml" class="headerlink" title="生成 xml"></a>生成 xml</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> enc = <span class="keyword">new</span> mxCodec(mxUtils.createXmlDocument())</span><br><span class="line"><span class="keyword">var</span> node = enc.encode(graph.getModel())</span><br><span class="line"><span class="keyword">var</span> xml = mxUtils.getXml(node)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mxGraph/" rel="tag"># mxGraph</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/23/mxGraph/mxEventSource/" rel="next" title="mxEventSource、mxEventObject">
+                <i class="fa fa-chevron-left"></i> mxEventSource、mxEventObject
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/23/vue/vue多级表单验证/" rel="prev" title="vue多级表单验证">
+                vue多级表单验证 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="简小岚">
+            
+              <p class="site-author-name" itemprop="name">简小岚</p>
+              <p class="site-description motion-element" itemprop="description">每个人心里都有十厘米的天空，一厘米的乌云一厘米的黑夜，剩下的是八厘米蔚蓝的天空。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置全局背景图"><span class="nav-number">1.</span> <span class="nav-text">设置全局背景图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义节点-cell-图像"><span class="nav-number">2.</span> <span class="nav-text">自定义节点 cell 图像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义-html-的-label"><span class="nav-number">3.</span> <span class="nav-text">自定义 html 的 label</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#就地编辑-待更新"><span class="nav-number">4.</span> <span class="nav-text">就地编辑(待更新)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-Tooltip-提示"><span class="nav-number">5.</span> <span class="nav-text">设置 Tooltip 提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成-xml"><span class="nav-number">6.</span> <span class="nav-text">生成 xml</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简小岚</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":300,"height":450,"hOffset":0,"vOffset":-50},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
